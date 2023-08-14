@@ -1,9 +1,3 @@
-/*
-todo:
-1. add error handling: if query is empty, populate a message
-2. add disclaimer 
-*/
-
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
@@ -21,34 +15,21 @@ export default function Features() {
     if (tabs.current && tabs.current.parentElement) tabs.current.parentElement.style.height = `${tabs.current.clientHeight}px`
   }
 
-  const URL = process.env.API_HOST
-
   const fetchData = async (enteredText: string) => {
     try {
-      console.log(enteredText)
-      const response = await fetch(`${URL}`, {
-        method: "GET",
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/query`, {
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        body: JSON.stringify({
+          "query": enteredText
+        })
       })
       const data = await response.json()
       if (data) {
-        setDisplayText(data)
+        setDisplayText(data['answer'])
       }
-      // const response = await fetch(`${URL}/query`, {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify({
-      //     "query": enteredText
-      //   })
-      // })
-      // const data = await response.json()
-      // if (data) {
-      //   setDisplayText(data['query'])
-      // }
     }
     catch (error) {
       console.log(error)
@@ -61,17 +42,13 @@ export default function Features() {
 
   return (
     <section className="relative">
-
-      {/* Section background (needs .relative class on parent and next sibling elements) */}
-      <div className="absolute inset-0 bg-gray-500 pointer-events-none mb-16" aria-hidden="true"></div>
-
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
         <div className="pt-12 md:pt-20">
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="text-5xl text-white md:text-1xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Welcome to <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 to-cyan-400">AskCogito</span></h1>
-            <p className='text-xl text-white'>A place to ponder on your philosophical thoughts</p>
+            <h1 className="text-5xl text-white md:text-1xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Welcome to <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-300 to-sky-200">ThinkAI</span></h1>
+            <p className='text-l text-white'>Disclaimer: Nomí has been trained on articles published by Stanford Encyclopedia of Philosphy [https://plato.stanford.edu]</p>
           </div>
 
           {/* Section content */}
@@ -87,11 +64,11 @@ export default function Features() {
                   href="#0"
                   onClick={(e) => { e.preventDefault(); setTab(4); }}
                 >
-                  <div className="font-bold leading-snug tracking-tight mb-1">
-                    <h3 className="h3 mb-3 text-black">Ask away, what do you want to know?</h3>
+                  <div className="leading-snug tracking-tight mb-1">
+                    <h4 className="h4 mb-3 text-black font-bold">Hi, this is Nomí, ask me a question!</h4>
                     <div className="flex flex-wrap -mx-3">
                       <div className="w-full px-3">
-                        <textarea className=" peer min-h-[100px] w-full resize-none form-input w-full rounded border text-gray-800" placeholder="Enter a Question to ask Cogito" 
+                        <textarea className="peer min-h-[100px] w-full resize-none rounded border text-gray-800" placeholder="Enter a Question to ask Nomí" 
                           required value={enteredText} onChange={(e) => {
                             setDisplayText('');
                             setEnteredText(e.target.value);
@@ -141,7 +118,7 @@ export default function Features() {
             </div>
 
             {/* Tabs items */}
-            <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1">
+            <div className="max-w-xl h-[500px] md:max-w-none md:w-full mx-auto md:col-span-5 lg:col-span-6 mb-8 md:mb-0 md:order-1">
               <div className="transition-all">
                 <div className="relative flex flex-col text-center lg:text-right" data-aos="zoom-y-out" ref={tabs}>
                   {/* Item 1 */}
@@ -161,7 +138,7 @@ export default function Features() {
                     <div className="relative flex-col pl-5">
                       <div className="relative flex-col rounded-lg bg-vscode-300">
                         <blockquote className="text-white text-l font-medium mb-4 font-mono text-justify px-4 py-4">
-                          Response generated from Cogito:
+                          Response generated from Nomí:
                         </blockquote>
                         <div className="rounded-b bg-white display-inline font-small text-sm font-mono text-justify px-4 py-4">
                           Helping others can make you feel good, but whether it's a selfless or selfish act depends on the underlying motivation. Altruistic acts involve doing good for others without seeking personal gain, while selfish acts are driven by self-interest. The distinction between these motives is important. Some argue that all human actions are ultimately motivated by self-interest, but this view doesn't fit all cases of helping behavior. Empathy plays a role – when you genuinely feel for others and help them without expecting something in return, it leans more towards selflessness. It's a complex debate, considering factors like empathy, social norms, and personal values.
@@ -186,7 +163,7 @@ export default function Features() {
                     <div className="relative flex-col pl-5">
                       <div className="relative flex-col rounded bg-vscode-300">
                         <blockquote className="text-white text-l font-medium mb-4 font-mono text-justify px-4 py-4">
-                          Response generated from Cogito:
+                          Response generated from Nomí:
                         </blockquote>
                         <div className="rounded-b bg-white display-inline font-small text-sm font-mono text-justify px-4 py-4">
                           The concept of "God" is a complex subject with various perspectives and arguments. One line of reasoning involves the problem of evil, questioning how the existence of evil aligns with an all-knowing and all-powerful God. Different approaches explore whether evil is compatible with divine attributes. Some arguments focus on the logical or evidential aspects of evil, while others consider the nature of time and God's existence. Additionally, theological concepts like the Trinity present challenges in understanding the relationship between divine persons. The discussion delves into the nature of God, the existence of evil, and the intricacies of divine attributes.
@@ -211,7 +188,7 @@ export default function Features() {
                     <div className="relative flex-col pl-5">
                       <div className="relative flex-col rounded bg-vscode-300">
                         <blockquote className="text-white text-l font-medium mb-4 font-mono text-justify px-4 py-4">
-                          Response generated from Cogito:
+                          Response generated from Nomí:
                         </blockquote>
                         <div className="rounded-b bg-white display-inline font-small text-sm font-mono text-justify px-4 py-4">
                           Philosophy is a discipline that explores fundamental questions about reality, knowledge, and existence. It engages with concepts and ideas through careful analysis and reasoning. Aristotle, an influential philosopher, addressed various aspects of philosophy, such as metaphysics, which examines the nature of beings and substances. In his work, he delved into the essence of things, their definitions, and the relationships between different elements. Philosophy also investigates topics like potentiality and actuality, the nature of substance, and the principles underlying our understanding of the world. It's a way of seeking deeper understanding and insight into the nature of the universe and our place in it.
@@ -236,10 +213,12 @@ export default function Features() {
                     <div className="relative flex-col pl-5">
                       <div className="relative flex-col rounded bg-vscode-300">
                         <blockquote className="text-white text-l font-medium mb-4 font-mono text-justify px-4 py-4">
-                          Response generated from Cogito:
+                          Response generated from Nomí:
                         </blockquote>
-                        <div className="rounded-b bg-white display-inline font-small text-sm font-mono text-justify px-4 py-4">
-                          {displayText}
+                        <div className="h-[calc(100vh-5.75rem)] sticky top-16 overflow-y-scroll overscroll-contain rounded-b bg-white display-inline font-small text-sm font-mono text-justify px-4 py-4">  
+                          <div className="h-[1000px]">
+                            {displayText}
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -248,6 +227,8 @@ export default function Features() {
               </div>
             </div>
           </div>
+          <footer className="fixed inset-x-0 bottom-0 z-50 bg-gray-500 h-4">
+          </footer>
         </div>
       </div>
     </section>
