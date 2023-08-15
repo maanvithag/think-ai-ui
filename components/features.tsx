@@ -52,6 +52,7 @@ export default function Features() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
             <h1 className="text-5xl text-white md:text-1xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Welcome to <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-300 to-sky-200">ThinkAI</span></h1>
+            <h3 className='h3 text-sky-200'> Your place for all things Philosophy</h3>
             <p className='text-l text-white'>Disclaimer: Nomí has been trained on articles published by Stanford Encyclopedia of Philosphy [https://plato.stanford.edu]</p>
           </div>
 
@@ -69,7 +70,7 @@ export default function Features() {
                   onClick={(e) => { e.preventDefault(); setTab(4); }}
                 >
                   <div className="leading-snug tracking-tight mb-1">
-                    <h4 className="h4 mb-3 text-black font-bold">Hi, this is Nomí, ask me a question!</h4>
+                    <h4 className="h4 mb-3 text-black font-bold">Hi, this is Nomí, ask me a question on Philosophy!</h4>
                     <div className="flex flex-wrap -mx-3">
                       <div className="w-full px-3">
                         <textarea className="peer min-h-[100px] w-full resize-none rounded border text-gray-800" placeholder="Enter a Question to ask Nomí" 
