@@ -10,3 +10,5 @@
 [![React](https://img.shields.io/badge/React-18-7cc5d9.svg)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/typeScript-007acc?logo=typescript&logoColor=white&style=flat)](https://www.typescriptlang.org)
 [![TailwindCSS](https://img.shields.io/badge/tailwindcss-white?&logo=tailwind+css&logoColor=38bdf8&style=flat)](https://tailwindcss.com)
+
+[ThinkAi](https://github.com/maanvithag/thinkai) is a Python-based LLM App trained on philosophy research that can answer questions on philosophy using Chroma's Vector Search, HuggingFace tokenizers for text chunking, Meta's `bart-large-cnn` model for summarizing, and OpenAI's `gpt-3.5-turbo` model for structuring the final response.
