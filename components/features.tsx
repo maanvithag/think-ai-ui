@@ -24,10 +24,12 @@ export default function Features() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          "query": enteredText
+          "query": enteredText,
+          "ping_openai": "false"
         })
       })
       if (!response.ok && response.status === 429) {
+        console.log(response)
         setDisplayText("ERROR: Too Many Requests, please try again after a few minutes")
       }
       else {
@@ -37,6 +39,7 @@ export default function Features() {
     }
     catch (error) {
       console.log(error)
+      // setDisplayText(error)
     }
   }
 
