@@ -28,7 +28,9 @@ export default function Features() {
         })
       })
       if (!response.ok && response.status === 429) {
-        setDisplayText("ERROR: Too Many Requests, please try again after a few minutes")
+        setDisplayText(
+          "ERROR: Too Many Requests, please try again after a few minutes. Current Usage Limits: 2 RPM, 5 RPH, 50 RPD"
+        )
       }
       else {
         const data = await response.json()
@@ -37,6 +39,7 @@ export default function Features() {
     }
     catch (error) {
       console.log(error)
+      setDisplayText('')
     }
   }
 
@@ -143,10 +146,10 @@ export default function Features() {
                   >
                     <div className="relative flex-col pl-5">
                       <div className="relative flex-col rounded bg-gradient-to-r from-slate-500 to-slate-600">
-                        <blockquote className="text-white text-l font-medium mb-4 font-mono text-justify px-4 py-4">
+                        <blockquote className="text-white text-l font-medium mb-4 font-mono text-left px-4 py-4">
                           Response generated from Nomí:
                         </blockquote>
-                        <div className="rounded-b bg-white display-inline font-small text-sm font-mono text-justify px-4 py-4">
+                        <div className="rounded-b bg-white display-inline font-small text-sm font-mono text-left px-4 py-4">
                           According to articles published by Stanford Encyclopedia of Philosophy, helping others can make you feel good, but whether it's a selfless or selfish act depends on the underlying motivation. Altruistic acts involve doing good for others without seeking personal gain, while selfish acts are driven by self-interest. The distinction between these motives is important. Some argue that all human actions are ultimately motivated by self-interest, but this view doesn't fit all cases of helping behavior. Empathy plays a role – when you genuinely feel for others and help them without expecting something in return, it leans more towards selflessness. It's a complex debate, considering factors like empathy, social norms, and personal values.
                         </div>
                       </div>
@@ -168,10 +171,10 @@ export default function Features() {
                   >
                     <div className="relative flex-col pl-5">
                       <div className="relative flex-col rounded bg-gradient-to-r from-slate-500 to-slate-600">
-                        <blockquote className="text-white text-l font-medium mb-4 font-mono text-justify px-4 py-4">
+                        <blockquote className="text-white text-l font-medium mb-4 font-mono text-left px-4 py-4">
                           Response generated from Nomí:
                         </blockquote>
-                        <div className="rounded-b bg-white display-inline font-small text-sm font-mono text-justify px-4 py-4">
+                        <div className="rounded-b bg-white display-inline font-small text-sm font-mono text-left px-4 py-4">
                           According to articles published by Stanford Encyclopedia of Philosophy, the concept of "God" is a complex subject with various perspectives and arguments. One line of reasoning involves the problem of evil, questioning how the existence of evil aligns with an all-knowing and all-powerful God. Different approaches explore whether evil is compatible with divine attributes. Some arguments focus on the logical or evidential aspects of evil, while others consider the nature of time and God's existence. Additionally, theological concepts like the Trinity present challenges in understanding the relationship between divine persons. The discussion delves into the nature of God, the existence of evil, and the intricacies of divine attributes.
                         </div>
                       </div>
@@ -196,7 +199,7 @@ export default function Features() {
                         <blockquote className="text-white text-l font-medium mb-4 font-mono text-justify px-4 py-4">
                           Response generated from Nomí:
                         </blockquote>
-                        <div className="rounded-b bg-white display-inline font-small text-sm font-mono text-justify px-4 py-4">
+                        <div className="rounded-b bg-white display-inline font-small text-sm font-mono text-left px-4 py-4">
                           According to articles published by Stanford Encyclopedia of Philosophy, philosophy is a discipline that explores fundamental questions about reality, knowledge, and existence. It engages with concepts and ideas through careful analysis and reasoning. Aristotle, an influential philosopher, addressed various aspects of philosophy, such as metaphysics, which examines the nature of beings and substances. In his work, he delved into the essence of things, their definitions, and the relationships between different elements. Philosophy also investigates topics like potentiality and actuality, the nature of substance, and the principles underlying our understanding of the world. It's a way of seeking deeper understanding and insight into the nature of the universe and our place in it.
                         </div>
                       </div>
@@ -221,7 +224,7 @@ export default function Features() {
                         <blockquote className="text-white text-l font-medium mb-4 font-mono text-justify px-4 py-4">
                           Response generated from Nomí:
                         </blockquote>
-                        <div className="h-[calc(100vh-5.75rem)] sticky top-16 overflow-y-scroll overscroll-contain rounded-b bg-white display-inline font-small text-sm font-mono text-justify px-4 py-4">  
+                        <div className="h-[calc(100vh-5.75rem)] sticky top-16 overflow-y-scroll overscroll-contain rounded-b bg-white display-inline font-small text-sm font-mono text-left px-4 py-4">  
                           <div className="h-[1000px]">
                             {displayText}
                           </div>

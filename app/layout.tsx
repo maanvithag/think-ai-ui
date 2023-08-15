@@ -4,6 +4,7 @@ import './style.css'
 
 import { useEffect } from 'react'
 import Header from '@/components/header'
+import Banner from '@/components/banner'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -28,6 +29,7 @@ export default function RootLayout({
         <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
           <Header />
           {children}
+          <Banner />
         </div>
       </body>
     </html>
