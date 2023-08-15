@@ -24,8 +24,7 @@ export default function Features() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          "query": enteredText,
-          "ping_openai": "false"
+          "query": enteredText
         })
       })
       if (!response.ok && response.status === 429) {
@@ -39,7 +38,7 @@ export default function Features() {
     }
     catch (error) {
       console.log(error)
-      // setDisplayText(error)
+      setDisplayText('')
     }
   }
 
