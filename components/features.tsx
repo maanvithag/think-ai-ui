@@ -47,13 +47,13 @@ export default function Features() {
   return (
     <section className="relative">
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pt-12 md:pt-20">
+        <div className="pt-6 md:pt-20">
 
           {/* Section header */}
-          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
-            <h1 className="text-5xl text-white md:text-1xl font-extrabold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">Welcome to <span className="bg-clip-text text-transparent bg-gradient-to-r from-gray-300 to-sky-200">ThinkAI</span></h1>
-            <h3 className='h3 text-sky-200'> Your place for all things Philosophy</h3>
-            <p className='text-l text-white'>Disclaimer: Nomí has been trained on articles published by Stanford Encyclopedia of Philosphy [https://plato.stanford.edu]</p>
+          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-8">
+            <h1 className="text-5xl text-white md:text-1xl font-mono font-bold leading-tighter tracking-tighter mb-4" data-aos="zoom-y-out">ThinkAi</h1>
+            <h3 className='h3 text-white md:text-1xl font-mono mb-4'> Your place for all things Philosophy</h3>
+            <p className='font-sans text-xs text-white'>Disclaimer: Nomí has been trained on articles published and owned by Stanford Encyclopedia of Philosphy [https://plato.stanford.edu]</p>
           </div>
 
           {/* Section content */}
@@ -70,16 +70,17 @@ export default function Features() {
                   onClick={(e) => { e.preventDefault(); setTab(4); }}
                 >
                   <div className="leading-snug tracking-tight mb-1">
-                    <h4 className="h4 mb-3 text-black font-bold">Hi, this is Nomí, ask me a question on Philosophy!</h4>
+                    <h4 className="h4 mb-3 font-mono text-black">Hi, this is Nomí, ask me a question on Philosophy!</h4>
                     <div className="flex flex-wrap -mx-3">
                       <div className="w-full px-3">
-                        <textarea className="peer min-h-[100px] w-full resize-none rounded border text-gray-800" placeholder="Enter a Question to ask Nomí" 
+                        <textarea className="peer min-h-[100px] w-full resize-none rounded border font-mono text-gray-800" placeholder="Enter a Question to ask Nomí" 
                           required value={enteredText} onChange={(e) => {
                             setDisplayText('');
                             setEnteredText(e.target.value);
                           }}
                         />
-                        <button className="btn-sm text-white bg-black hover:bg-gray-700 shadow" 
+                        <p className="text-white">blah</p>
+                        <button className="btn-sm text-white font-mono bg-black hover:bg-gray-700 shadow" 
                           onClick={() => {
                             setDisplayText('Generating Response...'); 
                             fetchData(enteredText);
@@ -98,7 +99,7 @@ export default function Features() {
                   onClick={(e) => { e.preventDefault(); setTab(1); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Example: Helping others makes me feel good, does this count as a selfless act or selfish act?</div>
+                    <div className="font-mono text-base leading-snug tracking-tight mb-1">Example: Helping others makes me feel good, does this count as a selfless act or selfish act?</div>
                   </div>
                 </a>
                 <a
@@ -107,7 +108,7 @@ export default function Features() {
                   onClick={(e) => { e.preventDefault(); setTab(2); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Example: What is God?</div>
+                    <div className="font-mono text-base leading-snug tracking-tight mb-1">Example: What is God?</div>
                   </div>
                 </a>
                 <a
@@ -116,7 +117,7 @@ export default function Features() {
                   onClick={(e) => { e.preventDefault(); setTab(3); }}
                 >
                   <div>
-                    <div className="font-bold leading-snug tracking-tight mb-1">Example: What is Philosphy?</div>
+                    <div className="font-mono text-base leading-snug tracking-tight mb-1">Example: What is Philosphy?</div>
                   </div>
                 </a>
               </div>
@@ -141,7 +142,7 @@ export default function Features() {
                     unmount={false}                     
                   >
                     <div className="relative flex-col pl-5">
-                      <div className="relative flex-col rounded-lg bg-vscode-300">
+                      <div className="relative flex-col rounded bg-gradient-to-r from-slate-500 to-slate-600">
                         <blockquote className="text-white text-l font-medium mb-4 font-mono text-justify px-4 py-4">
                           Response generated from Nomí:
                         </blockquote>
@@ -166,7 +167,7 @@ export default function Features() {
                     unmount={false}                     
                   >
                     <div className="relative flex-col pl-5">
-                      <div className="relative flex-col rounded bg-vscode-300">
+                      <div className="relative flex-col rounded bg-gradient-to-r from-slate-500 to-slate-600">
                         <blockquote className="text-white text-l font-medium mb-4 font-mono text-justify px-4 py-4">
                           Response generated from Nomí:
                         </blockquote>
@@ -191,7 +192,7 @@ export default function Features() {
                     unmount={false}                     
                   >
                     <div className="relative flex-col pl-5">
-                      <div className="relative flex-col rounded bg-vscode-300">
+                      <div className="relative flex-col rounded bg-gradient-to-r from-slate-500 to-slate-600">
                         <blockquote className="text-white text-l font-medium mb-4 font-mono text-justify px-4 py-4">
                           Response generated from Nomí:
                         </blockquote>
@@ -216,7 +217,7 @@ export default function Features() {
                     unmount={false}                     
                   >
                     <div className="relative flex-col pl-5">
-                      <div className="relative flex-col rounded bg-vscode-300">
+                      <div className="relative flex-col rounded bg-gradient-to-r from-slate-500 to-slate-600">
                         <blockquote className="text-white text-l font-medium mb-4 font-mono text-justify px-4 py-4">
                           Response generated from Nomí:
                         </blockquote>
@@ -232,7 +233,7 @@ export default function Features() {
               </div>
             </div>
           </div>
-          <footer className="fixed inset-x-0 bottom-0 z-50 bg-gray-500 h-4">
+          <footer className="fixed inset-x-0 bottom-0 z-50 bg-navy-100 h-6">
           </footer>
         </div>
       </div>
