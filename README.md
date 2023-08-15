@@ -1,7 +1,5 @@
-Code to Thought-Realm 
-
-<p align="center" width="50%">
-<img src="assets/thinkai-banner.png" alt="ThinkAi" style="width: 50%; min-width: 200px; display: block; margin: auto; background-color: transparent;">
+<p className="align-center">
+<img src="assets/logo.png" alt="ThinkAi" style="width: 50%; min-width: 200px; display: block; margin: auto; background-color: transparent;">
 </p>
 
 # ThinkAi
