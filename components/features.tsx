@@ -112,7 +112,7 @@ export default function Features() {
                   onClick={(e) => { e.preventDefault(); setTab(3); }}
                 >
                   <div>
-                    <div className="font-mono text-base leading-snug tracking-tight mb-1">Example: If someone has less material wealth than me, does this automatically make him unhappy? ?</div>
+                    <div className="font-mono text-base leading-snug tracking-tight mb-1">Example: If someone has less material wealth than me, does this automatically make him unhappy?</div>
                   </div>
                 </a>
                 <a
