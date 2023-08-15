@@ -1,4 +1,4 @@
-<p className="align-center">
+<p align="center">
 <img src="assets/logo.png" alt="ThinkAi" style="width: 50%; min-width: 200px; display: block; margin: auto; background-color: transparent;">
 </p>
 
