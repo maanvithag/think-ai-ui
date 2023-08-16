@@ -112,7 +112,7 @@ export default function Features() {
                   onClick={(e) => { e.preventDefault(); setTab(3); }}
                 >
                   <div>
-                    <div className="font-mono text-base leading-snug tracking-tight mb-1">Example: If someone has less material wealth than me, does this automatically make him unhappy?</div>
+                    <div className="font-mono text-base leading-snug tracking-tight mb-1">Example: How does one become a “good person”?</div>
                   </div>
                 </a>
                 <a
@@ -203,7 +203,7 @@ export default function Features() {
                           Response generated from Nomí:
                         </blockquote>
                         <div className="rounded-b bg-white display-inline font-small text-sm font-mono text-left px-4 py-4">
-                          According to articles published by Stanford Encyclopedia of Philosophy, having less material wealth than someone else does not automatically make a person unhappy. While envy may arise when someone does not possess the same material goods as another person, it does not necessarily mean that the person is unhappy. Happiness is often seen as a short-lived state and well-being is a kind of value that is separate from material wealth. The concept of well-being challenges the notion that sacrificing present comfort for future health is always a sacrifice. Therefore, the level of material wealth does not determine a person's happiness.
+                          According to articles published by Stanford Encyclopedia of Philosophy, becoming a "good person" involves various aspects. Hume defines a "good person" as someone who possesses virtues such as goodwill, generosity, and love. Kant argues that everyone has a duty to be helpful to others. Some philosophers believe that beneficent actions are virtuous and commendable. Gert's theory suggests that the goal of morality is to minimize harm rather than promote good. Singer argues for striving to donate a percentage of income. Murphy proposes fixing limits for large-scale problems as cooperative projects. The concept of being a "good person" is multifaceted and encompasses different perspectives and theories in philosophy.
                         </div>
                       </div>
                     </div>
