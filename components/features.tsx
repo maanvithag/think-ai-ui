@@ -103,7 +103,7 @@ export default function Features() {
                   onClick={(e) => { e.preventDefault(); setTab(2); }}
                 >
                   <div>
-                    <div className="font-mono text-base leading-snug tracking-tight mb-1">Example: What is God?</div>
+                    <div className="font-mono text-base leading-snug tracking-tight mb-1">Example: Am I a Human?</div>
                   </div>
                 </a>
                 <a
@@ -178,7 +178,7 @@ export default function Features() {
                           Response generated from Nomí:
                         </blockquote>
                         <div className="rounded-b bg-white display-inline font-small text-sm font-mono text-left px-4 py-4">
-                          According to articles published by Stanford Encyclopedia of Philosophy, the concept of God is discussed in relation to various philosophical perspectives. Theism is the view that God is an omniscient, omnipotent, and omnibenevolent being who created the world. The question of God's existence is often debated, and arguments such as the argument from evil are presented to challenge the idea of an all-good and all-powerful God. Different theories and interpretations of the Trinity are also explored, including the concept of one-self theories and three-self theories. Overall, the nature and attributes of God are complex and subject to philosophical inquiry and debate.
+                          According to articles published by Stanford Encyclopedia of Philosophy, the concept of personal identity is complex and there is no consensus on what defines a person. Some argue that personal identity is based on both mental and physical continuity, while others suggest that it is determined by causal dependence. Additionally, the question of what matters in identity is also debated, with some proposing that being a human person is based on being an organism. However, being an organism does not necessarily mean being a human person. Therefore, whether or not you are a human depends on how personal identity is defined, and there is no definitive answer provided in the extract.
                         </div>
                       </div>
                     </div>
