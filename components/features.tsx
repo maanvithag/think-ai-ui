@@ -121,7 +121,7 @@ export default function Features() {
                   onClick={(e) => { e.preventDefault(); setTab(4); }}
                 >
                   <div>
-                    <div className="font-mono text-base leading-snug tracking-tight mb-1">Example: Helping others makes me feel good, does this count as a selfless act or selfish act?</div>
+                    <div className="font-mono text-base leading-snug tracking-tight mb-1">Example: Is morality developed within a culture, or is it intrinsic?</div>
                   </div>
                 </a>
               </div>
@@ -228,7 +228,7 @@ export default function Features() {
                           Response generated from Nomí:
                         </blockquote>
                         <div className="rounded-b bg-white display-inline font-small text-sm font-mono text-left px-4 py-4">
-                          According to articles published by Stanford Encyclopedia of Philosophy, helping others can make you feel good, but whether it's a selfless or selfish act depends on the underlying motivation. Altruistic acts involve doing good for others without seeking personal gain, while selfish acts are driven by self-interest. The distinction between these motives is important. Some argue that all human actions are ultimately motivated by self-interest, but this view doesn't fit all cases of helping behavior. Empathy plays a role – when you genuinely feel for others and help them without expecting something in return, it leans more towards selflessness. It's a complex debate, considering factors like empathy, social norms, and personal values.
+                          According to articles published by Stanford Encyclopedia of Philosophy, morality is understood as a set of social rules, principles, and norms that guide people's conduct. Moral philosophers do not believe that the results of their reflective activities are limited to their own societies. In African ethics, morality is considered intrinsic to the conception of a person, and character is acquired through performing good actions. Some scholars argue that there is a connection between religion and morality in African ethics, but the sources of African morality are independent of religious prescriptions. On the other hand, moral relativism, which gained prominence in the twentieth century, suggests that moral judgments are relative to the moral code of a society. Proponents of moral relativism focus on the distinctive features of morality and reject general relativism. There is ongoing debate about whether morality is developed within a culture or if it is intrinsic.
                         </div>
                       </div>
                     </div>
