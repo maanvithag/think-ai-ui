@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'ThinkAi Home',
-  description: 'Page description',
+  title: 'ThinkAi',
+  description: 'Nomí by ThinkAi',
 }
 
 import Features from '@/components/features'
