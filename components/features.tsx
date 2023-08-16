@@ -51,7 +51,7 @@ export default function Features() {
   return (
     <section className="relative">
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="pt-6 md:pt-20">
+        <div className="pt-6 md:pt-10">
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-12 md:pb-8">
@@ -150,7 +150,7 @@ export default function Features() {
                         <blockquote className="text-white text-l font-medium mb-4 font-mono text-justify px-4 py-4">
                           Response generated from Nomí:
                         </blockquote>
-                        <div className="h-[calc(100vh-5.75rem)] sticky top-16 overflow-y-scroll overscroll-contain rounded-b bg-white display-inline font-small text-sm font-mono text-left px-4 py-4">  
+                        <div className="h-[calc(68vh-5.75rem)] sticky top-16 overflow-y-scroll overscroll-contain rounded-b bg-white display-inline font-small text-sm font-mono text-left px-4 py-4">  
                           <div className="h-[1000px]">
                             {displayText}
                           </div>
@@ -237,8 +237,6 @@ export default function Features() {
               </div>
             </div>
           </div>
-          <footer className="fixed inset-x-0 bottom-0 z-50 bg-navy-100 h-6">
-          </footer>
         </div>
       </div>
     </section>
