@@ -8,7 +8,8 @@ export default function Features() {
   const [tab, setTab] = useState<number>(1)
   const [enteredText, setEnteredText] = useState('') // State to store entered text
   const [displayText, setDisplayText] = useState('') // State to store display text
-  const [refText, setRefText] = useState([]) // State to store display references
+  const [refText, setRefText] = useState([{'link': '', 'title': ''}]) // State to store display references
+  const [refConstText, setRefConstText] = useState({'ref': '', 'publication': ''})
 
   const ex1 = {
     "query": "Am I a Human?",
@@ -65,8 +66,8 @@ export default function Features() {
       }
       else {
         const data = await response.json()
-        console.log(data['references'])
         setDisplayText(data['answer'])
+        setRefConstText({'ref': 'References:', 'publication': ', The Stanford Encyclopedia of Philosophy'})
         setRefText(data['references'])
       }
     }
@@ -180,7 +181,7 @@ export default function Features() {
                             {displayText}
                             <br/> <br/>
                             <p className="font-mono text-rose-600">
-                              References: 
+                              {refConstText.ref} 
                             </p>
                             <ul>
                               {
@@ -188,7 +189,7 @@ export default function Features() {
                                 <li className="font-sans">
                                 <a key={idx} href={val['link']} className="font-sans text-blue-600 underline">
                                   {val['title']}
-                                </a>, The Stanford Encyclopedia of Philosophy
+                                </a>{refConstText.publication}
                                 </li>
                                 )
                               }
