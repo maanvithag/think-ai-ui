@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer>
-      <div className="max-w-6xl mx-auto sm:px-6">
+      <div className="max-w-6xl mx-auto py-2 sm:px-6">
 
         {/* Bottom area */}
         <div className="md:flex content-center py-2 border-t border-white">
@@ -22,11 +22,20 @@ export default function Footer() {
                 </svg>
               </a>
             </li>
+            <li className="ml-4">
+              <a href="https://www.linkedin.com/in/maanvithag/" className="flex justify-center items-center text-gray-600 hover:text-gray-900 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out" aria-label="LinkedIn">
+                <svg className="w-8 h-8 fill-current" viewBox="-8 -6 36 36" xmlns="http://www.w3.org/2000/svg"> 
+                  <path d="M19.959 11.719v7.379h-4.278v-6.885c0-1.73-.619-2.91-2.167-2.91-1.182 0-1.886.796-2.195 1.565-.113.275-.142.658-.142 1.043v7.187h-4.28s.058-11.66 0-12.869h4.28v1.824l-.028.042h.028v-.042c.568-.875 1.583-2.126 3.856-2.126 2.815 0 4.926 1.84 4.926 5.792zM2.421.026C.958.026 0 .986 0 2.249c0 1.235.93 2.224 2.365 2.224h.028c1.493 0 2.42-.989 2.42-2.224C4.787.986 3.887.026 2.422.026zM.254 19.098h4.278V6.229H.254v12.869z"></path>
+                </svg>
+              </a>
+              </li>
           </ul>
 
           {/* Copyrights note */}
-          <div className="text-base text-white mr-4">&copy; Maanvitha Gongalla. All rights reserved.</div>
-
+          <div className="text-base text-white mr-4">
+            &copy; Maanvitha Gongalla. All rights reserved.
+            <p>Disclaimer: Nomí has been trained on articles published and owned by Stanford Encyclopedia of Philosphy (https://plato.stanford.edu)</p>
+          </div>
         </div>
       </div>
     </footer>

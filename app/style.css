@@ -16,7 +16,7 @@
 }
 
 .h4 {
-    @apply text-lg font-bold leading-snug tracking-tight;
+    @apply text-lg leading-snug tracking-tight;
 }
 
 @screen md {
@@ -32,7 +32,7 @@
 /* Buttons */
 .btn,
 .btn-sm {
-    @apply font-medium inline-flex items-center justify-center border border-transparent rounded leading-snug transition duration-150 ease-in-out;
+    @apply font-medium inline-flex items-center justify-center border border-transparent rounded-lg leading-snug transition duration-150 ease-in-out;
 }
 
 .btn {
