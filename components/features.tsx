@@ -6,10 +6,17 @@ import { Transition } from '@headlessui/react'
 export default function Features() {
   
   const [tab, setTab] = useState<number>(1)
+
   const [enteredText, setEnteredText] = useState('') // State to store entered text
   const [displayText, setDisplayText] = useState('') // State to store display text
-  const [refText, setRefText] = useState([{'link': '', 'title': ''}]) // State to store display references
-  const [refConstText, setRefConstText] = useState({'ref': '', 'publication': ''})
+
+  const queryConstText = 'Response generated from Nomí:'
+  const [queryText, setQueryText] = useState(queryConstText) // State to store user query
+  
+  const refConstText = [{'link': '', 'title': ''}]
+  const [refText, setRefText] = useState(refConstText) // State to store references text
+  const refMetaConstText = {'ref': '', 'publication': ''}
+  const [refMetaText, setRefMetaText] = useState(refMetaConstText) // State to store references meta text
 
   const ex1 = {
     "query": "Am I a Human?",
@@ -50,7 +57,8 @@ export default function Features() {
   const fetchData = async (enteredText: string) => {
 
     try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/query`, {
+      // const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/query`, {
+      const response = await fetch(`https://www.thinkaiapi.store/query`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -67,13 +75,16 @@ export default function Features() {
       else {
         const data = await response.json()
         setDisplayText(data['answer'])
-        setRefConstText({'ref': 'References:', 'publication': ', The Stanford Encyclopedia of Philosophy'})
+        setRefMetaText({'ref': 'References:', 'publication': ', The Stanford Encyclopedia of Philosophy'})
         setRefText(data['references'])
       }
     }
     catch (error) {
       console.log(error)
       setDisplayText('')
+      setQueryText(queryConstText)
+      setRefText(refConstText)
+      setRefMetaText(refMetaConstText)
     }
   }
 
@@ -107,12 +118,16 @@ export default function Features() {
                         <textarea className="peer min-h-[100px] w-full resize-none rounded border font-mono text-base text-gray-800" placeholder="Enter a Question to ask Nomí" 
                           required value={enteredText} onChange={(e) => {
                             setDisplayText('');
+                            setQueryText(queryConstText);
+                            setRefText(refConstText);
+                            setRefMetaText(refMetaConstText);
                             setEnteredText(e.target.value);
                           }}
                         />
                         <p className="text-white">blah</p>
                         <button className="btn-sm text-white bg-black hover:bg-gray-700 shadow" 
                           onClick={() => {
+                            setQueryText('Question: ' + enteredText);
                             setDisplayText('Generating Response...'); 
                             fetchData(enteredText);
                             setEnteredText('');
@@ -142,7 +157,7 @@ export default function Features() {
                   </div>
                 </a>
                 <a
-                  className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${tab !== 1 ? 'bg-white shadow-md border-gray-200 hover:shadow-lg' : 'bg-gray-300 border-transparent'}`}
+                  className={`flex items-center text-lg p-5 rounded border transition duration-300 ease-in-out mb-3 ${tab !== 4 ? 'bg-white shadow-md border-gray-200 hover:shadow-lg' : 'bg-gray-300 border-transparent'}`}
                   href="#0"
                   onClick={(e) => { e.preventDefault(); setTab(4); }}
                 >
@@ -173,15 +188,15 @@ export default function Features() {
                   >
                     <div className="relative flex-col pl-5">
                       <div className="relative flex-col rounded bg-gradient-to-r from-slate-500 to-slate-600">
-                        <blockquote className="text-white text-l font-medium mb-4 font-mono text-justify px-4 py-4">
-                          Response generated from Nomí:
+                        <blockquote className="text-white text-sm font-medium mb-4 font-mono text-left px-4 py-2">
+                          {queryText}
                         </blockquote>
                         <div className="h-[calc(58vh-5.75rem)] sticky top-16 overflow-y-scroll overscroll-contain rounded-b bg-white display-inline font-small text-sm font-mono text-left px-4 py-4">  
                           <div className="h-[800px]">
                             {displayText}
                             <br/> <br/>
                             <p className="font-mono text-rose-600">
-                              {refConstText.ref} 
+                              {refMetaText.ref} 
                             </p>
                             <ul>
                               {
@@ -189,7 +204,7 @@ export default function Features() {
                                 <li className="font-sans">
                                 <a key={idx} href={val['link']} className="font-sans text-blue-600 underline">
                                   {val['title']}
-                                </a>{refConstText.publication}
+                                </a>{refMetaText.publication}
                                 </li>
                                 )
                               }
@@ -216,8 +231,8 @@ export default function Features() {
                   >
                   <div className="relative flex-col pl-5">
                     <div className="relative flex-col rounded bg-gradient-to-r from-slate-500 to-slate-600">
-                      <blockquote className="text-white text-l font-medium mb-4 font-mono text-justify px-4 py-4">
-                        Response generated from Nomí:
+                      <blockquote className="text-white text-base font-medium mb-4 font-mono text-left px-4 py-4">
+                        {queryConstText}
                       </blockquote>
                       <div className="h-[calc(58vh-5.75rem)] sticky top-16 overflow-y-scroll overscroll-contain rounded-b bg-white display-inline font-small text-sm font-mono text-left px-4 py-4">  
                         <div className="h-[600px]">
@@ -259,8 +274,8 @@ export default function Features() {
                   >
                   <div className="relative flex-col pl-5">
                     <div className="relative flex-col rounded bg-gradient-to-r from-slate-500 to-slate-600">
-                      <blockquote className="text-white text-l font-medium mb-4 font-mono text-justify px-4 py-4">
-                        Response generated from Nomí:
+                      <blockquote className="text-white text-base font-medium mb-4 font-mono text-left px-4 py-4">
+                        {queryConstText}
                       </blockquote>
                       <div className="h-[calc(58vh-5.75rem)] sticky top-16 overflow-y-scroll overscroll-contain rounded-b bg-white display-inline font-small text-sm font-mono text-left px-4 py-4">  
                         <div className="h-[600px]">
@@ -304,8 +319,8 @@ export default function Features() {
                   >
                   <div className="relative flex-col pl-5">
                     <div className="relative flex-col rounded bg-gradient-to-r from-slate-500 to-slate-600">
-                      <blockquote className="text-white text-l font-medium mb-4 font-mono text-justify px-4 py-4">
-                        Response generated from Nomí:
+                      <blockquote className="text-white text-base font-medium mb-4 font-mono text-left px-4 py-4">
+                        {queryConstText}
                       </blockquote>
                       <div className="h-[calc(58vh-5.75rem)] sticky top-16 overflow-y-scroll overscroll-contain rounded-b bg-white display-inline font-small text-sm font-mono text-left px-4 py-4">  
                         <div className="h-[600px]">
